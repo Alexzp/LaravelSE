@@ -48,7 +48,10 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
 
         return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+            ?: redirect($this->redirectPath())->with([
+                'successRegistered'=>"Thank you, $user->name ! You have successfully registered. Please login.",
+                'email'=>$user->email
+            ]);
     }
     /**
      * Create a new user instance after a valid registration.
