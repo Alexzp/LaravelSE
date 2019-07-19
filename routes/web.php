@@ -18,3 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Socialite routes
+Route::prefix('social/auth')->name('social.')->namespace('Auth')->group(function () {
+
+    Route::get('{provider}', 'SocialiteAuthController@authenticate')
+        ->where(['provider' => 'facebook|google|twitter|github'])
+        ->name('redirect');
+    
+    Route::get('{provider}/callback', 'SocialiteAuthController@socialiteCallback')
+        ->where(['provider' => 'facebook|google|twitter|github'])
+        ->name('callback');
+});
+
+
