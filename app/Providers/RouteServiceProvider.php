@@ -54,7 +54,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapAdminRoutes()
     {
-        Route::domain('admin.laravelse.com')
+        Route::domain( $this->baseDomain('admin') )
              ->middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/admin.php'));
@@ -86,5 +86,14 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    private function baseDomain(string $subdomain = ''): string
+    {
+        if (strlen($subdomain) > 0) {
+            $subdomain = "{$subdomain}.";
+        }
+
+        return $subdomain . config('app.base_domain');
     }
 }
