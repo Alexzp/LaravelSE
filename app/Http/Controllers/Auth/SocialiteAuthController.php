@@ -15,16 +15,15 @@ class SocialiteAuthController extends Controller
     
     public function authenticate($provider)
     {
-        //dd('before redirect to '.$provider);
         return Socialite::driver($provider)->redirect();
     }
  
     public function socialiteCallback($provider)
     {
-        // dd('in callback',request()->all());
+        
         try {
             $socialUserInfo = Socialite::driver($provider)->user();
-            //dd($socialUserInfo);
+            
             if (Auth::check()) {
                 // The user is logged in. Probably we need to add this profile for him
                 return $this->assignSocialProfileToUser($socialUserInfo,$provider);
@@ -33,7 +32,6 @@ class SocialiteAuthController extends Controller
                 // It is guest.We neen register or login him
                 return $this->loginOrRegisterUserByProfile($socialUserInfo,$provider);
             }
-
             
         } catch (Exception $e) {
             throw new SocialAuthException("failed to authenticate with $provider");
@@ -75,7 +73,7 @@ class SocialiteAuthController extends Controller
 
     private function assignSocialProfileToUser($socialUserInfo,$provider)
     {
-        // Todo
+        
         $userProfile = SocialProfile::firstOrNew([
             'user_id' => Auth::user()->id,
             'email' => $socialUserInfo->getEmail(),
