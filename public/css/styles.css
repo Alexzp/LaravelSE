@@ -1,0 +1,12 @@
+.social-button {
+    text-align: center;
+}
+.social-links{
+    padding-inline-start: 0px;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    margin-bottom: 3px;
+}
