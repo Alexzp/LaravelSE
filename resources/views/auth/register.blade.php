@@ -69,9 +69,14 @@
                             </div>
                         </div>
                     </form>
+                    <hr>
+                    @include('social.redirect_list')
                 </div>
             </div>
         </div>
     </div>
+    
+    
+    
 </div>
 @endsection

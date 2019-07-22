@@ -47,22 +47,22 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => 'http://laravelse.loc/auth/facebook/callback',
+        'redirect' => 'http://laravelse.com/social/auth/facebook/callback',
     ],
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'http://laravelse.loc/auth/google/callback',
+        'redirect' => 'http://laravelse.com/social/auth/google/callback',
     ],
     'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect' => 'http://laravelse.loc/auth/twitter/callback',
+        'redirect' => 'http://laravelse.com/social/auth/twitter/callback',
     ],
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'http://laravelse.loc/auth/github/callback',
+        'redirect' => 'http://laravelse.com/social/auth/github/callback',
     ],
     
 
