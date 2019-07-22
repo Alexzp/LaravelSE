@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::domain('{subdomain}.laravelse.com')->group(function () {
+    
+    Route::get('test/{param}', function ($subdomain, $param) {
+        return "<h3>Current subdomain : $subdomain with url param : $param </h3>";
+    });
+    
+});
 
 Route::get('/', function () {
     return view('welcome');
