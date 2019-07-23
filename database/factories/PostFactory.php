@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
+use App\Post;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Carbon\Carbon;
@@ -17,7 +17,13 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Post::class, function (Faker $faker) {
     return [
+        'title' => $faker->words(3, true),
+        'body' => $faker->realText(),
+        'slug' => $faker->slug,
+        'published' => $faker->boolean(),
+        'author_id' => random_int(0, 9223372036854775807),
+        'thumbnail_id' => random_int(0, 9223372036854775807)
     ];
 });

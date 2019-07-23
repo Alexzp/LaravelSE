@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
+use App\Category;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Carbon\Carbon;
@@ -17,7 +17,10 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Category::class, function (Faker $faker) {
     return [
+        'name' => $faker->name(),
+        'description' => $faker->realText(),
+        'slug' => $faker->slug
     ];
 });

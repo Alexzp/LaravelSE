@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
+use App\Wall;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Carbon\Carbon;
@@ -17,7 +17,10 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Wall::class, function (Faker $faker) {
     return [
+        'title' => $faker->words(3, true),
+        'slug' => $faker->slug,
+        'user_id' => random_int(1, 10)
     ];
 });

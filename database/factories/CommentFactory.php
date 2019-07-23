@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
+use App\Comment;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Carbon\Carbon;
@@ -17,7 +17,13 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Comment::class, function (Faker $faker) {
     return [
+        'body' => $faker->realText(),
+        'published' => $faker->boolean(),
+        'post_id' => random_int(1, 10),
+        'author_id' => random_int(0, 9223372036854775807),
+        'reply_id' => random_int(0, 9223372036854775807),
+        'commentable' => DATATYPE_NOT_IMPLEMENTED_YET
     ];
 });

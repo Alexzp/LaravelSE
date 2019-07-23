@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
+use App\Media;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Carbon\Carbon;
@@ -17,7 +17,11 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Media::class, function (Faker $faker) {
     return [
+        'filename' => $faker->sentence(),
+        'origin_filename' => $faker->sentence(),
+        'mime_type' => $faker->sentence(),
+        'mediable' => DATATYPE_NOT_IMPLEMENTED_YET
     ];
 });
