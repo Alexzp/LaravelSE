@@ -36,4 +36,54 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the walls for the User.
+     */
+    public function walls()
+    {
+        return $this->belongsToMany(\App\Models\Wall::class);
+    }
+
+    /**
+     * Get all of the user's posts.
+     */
+    public function posts()
+    {
+        return $this->belongsToMany(\App\Models\Wall::class,'author_id');
+    }
+
+    /**
+     * Get all of the users's comments.
+     */
+    public function comments()
+    {
+        return $this->belongsToMany(\App\Models\Comment::class, 'author_id');
+    }
+
+    /**
+     * Get all of the users's likes.
+     */
+    public function likes()
+    {
+        return $this->belongsToMany(\App\Models\Like::class, 'author_id');
+    }
+
+    /**
+     * Get all of the users's likes.
+     */
+    public function ratings()
+    {
+        return $this->belongsToMany(\App\Models\Ratings::class, 'author_id');
+    }
+
+    /**
+     * Get all of the users's roles.
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(\App\Models\Role::class);
+    }
+
+
 }

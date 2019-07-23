@@ -38,11 +38,11 @@ class Post extends Model
     ];
 
     /**
-     * Get the Comments for the Post.
+     * Get all of the post's comments.
      */
     public function comments()
     {
-        return $this->hasMany(\App\Models\Comment::class);
+        return $this->morphMany(\App\Models\Comment::class, 'commentable');
     }
 
 

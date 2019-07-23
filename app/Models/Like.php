@@ -33,4 +33,12 @@ class Like extends Model
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];
+
+    /**
+     * Get the owning likeable model.
+     */
+    public function likeable()
+    {
+        return $this->morphTo();
+    }
 }

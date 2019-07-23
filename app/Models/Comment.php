@@ -12,7 +12,7 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-        'body', 'published', 'post_id', 'author_id', 'reply_id', 'commentable'
+        'body', 'published', 'author_id', 'reply_id', 'commentable'
     ];
 
     /**
@@ -36,11 +36,18 @@ class Comment extends Model
     ];
 
     /**
-     * Get the Post for the Comment.
+     * Get the owning commentable model.
      */
-    public function post()
+    public function commentable()
     {
-        return $this->belongsTo(\App\Models\Post::class);
+        return $this->morphTo();
+    }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function reply()
+    {
+        return $this->belongsTo(self::class);
     }
 
 }

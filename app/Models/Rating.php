@@ -33,4 +33,12 @@ class Rating extends Model
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];
+
+    /**
+     * Get the owning commentable model.
+     */
+    public function commentable()
+    {
+        return $this->morphTo();
+    }
 }

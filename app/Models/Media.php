@@ -36,4 +36,12 @@ class Media extends Model
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];
+
+    /**
+     * Get the owning mediable model.
+     */
+    public function mediable()
+    {
+        return $this->morphTo();
+    }
 }
