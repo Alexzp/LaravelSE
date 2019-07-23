@@ -53,4 +53,20 @@ class Wall extends Model
         return $this->belongsToMany(\App\Models\Post::class);
     }
 
+    /**
+     * Get all of the wall's comments.
+     */
+    public function comments()
+    {
+        return $this->morphMany(\App\Models\Comment::class, 'commentable');
+    }
+
+    /**
+     * Get all of the wall's ratings.
+     */
+    public function ratings()
+    {
+        return $this->morphMany(\App\Models\Rating::class, 'commentable');
+    }
+
 }
