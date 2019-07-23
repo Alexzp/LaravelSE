@@ -1,6 +1,6 @@
 <?php
 
-use App\Media;
+use App\Models\Media;
 use Illuminate\Database\Seeder;
 
 class MediaSeeder extends Seeder

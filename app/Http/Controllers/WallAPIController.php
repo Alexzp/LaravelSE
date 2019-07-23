@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Wall;
+use App\Models\Wall;
 use App\Http\Resources\WallCollection;
 use App\Http\Resources\WallResource;
  

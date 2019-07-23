@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Rating;
+use App\Models\Rating;
 use App\Http\Resources\RatingCollection;
 use App\Http\Resources\RatingResource;
  

@@ -1,6 +1,6 @@
 <?php
 
-use App\Like;
+use App\Models\Like;
 use Illuminate\Database\Seeder;
 
 class LikeSeeder extends Seeder

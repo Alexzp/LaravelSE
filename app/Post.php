@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -42,7 +42,7 @@ class Post extends Model
      */
     public function comments()
     {
-        return $this->hasMany(\App\Comment::class);
+        return $this->hasMany(\App\Models\Comment::class);
     }
 
 
@@ -51,7 +51,7 @@ class Post extends Model
      */
     public function walls()
     {
-        return $this->belongsToMany(\App\Wall::class);
+        return $this->belongsToMany(\App\Models\Wall::class);
     }
 
     /**
@@ -59,7 +59,7 @@ class Post extends Model
      */
     public function categories()
     {
-        return $this->belongsToMany(\App\Category::class);
+        return $this->belongsToMany(\App\Models\Category::class);
     }
 
     /**
@@ -67,7 +67,7 @@ class Post extends Model
      */
     public function tags()
     {
-        return $this->belongsToMany(\App\Tag::class);
+        return $this->belongsToMany(\App\Models\Tag::class);
     }
 
 }

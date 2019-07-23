@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Comment;
+use App\Models\Comment;
 use App\Http\Resources\CommentCollection;
 use App\Http\Resources\CommentResource;
  

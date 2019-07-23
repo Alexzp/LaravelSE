@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+use App\Models\Post;
 use App\Http\Resources\PostCollection;
 use App\Http\Resources\PostResource;
  

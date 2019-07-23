@@ -1,6 +1,6 @@
 <?php
 
-use App\Wall;
+use App\Models\Wall;
 use Illuminate\Database\Seeder;
 
 class WallSeeder extends Seeder

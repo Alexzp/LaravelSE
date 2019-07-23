@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Like;
+use App\Models\Like;
 use App\Http\Resources\LikeCollection;
 use App\Http\Resources\LikeResource;
  

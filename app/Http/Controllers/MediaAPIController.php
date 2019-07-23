@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Media;
+use App\Models\Media;
 use App\Http\Resources\MediaCollection;
 use App\Http\Resources\MediaResource;
  

@@ -1,6 +1,6 @@
 <?php
 
-use App\Rating;
+use App\Models\Rating;
 use Illuminate\Database\Seeder;
 
 class RatingSeeder extends Seeder

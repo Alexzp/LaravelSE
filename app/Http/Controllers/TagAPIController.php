@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Tag;
+use App\Models\Tag;
 use App\Http\Resources\TagCollection;
 use App\Http\Resources\TagResource;
  
