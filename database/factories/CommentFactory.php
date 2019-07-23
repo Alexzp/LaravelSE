@@ -21,7 +21,6 @@ $factory->define(Comment::class, function (Faker $faker) {
     return [
         'body' => $faker->realText(),
         'published' => $faker->boolean(),
-        'post_id' => random_int(1, 10),
         'author_id' => random_int(0, 9223372036854775807),
         'reply_id' => random_int(0, 9223372036854775807),
         'commentable' => DATATYPE_NOT_IMPLEMENTED_YET
