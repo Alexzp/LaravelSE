@@ -15,6 +15,7 @@ class CreateRatingsTable extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedTinyInteger('mark');
             $table->unsignedBigInteger('author_id');
             $table->morphs('ratingable');
             $table->timestamp('created_at')->nullable();

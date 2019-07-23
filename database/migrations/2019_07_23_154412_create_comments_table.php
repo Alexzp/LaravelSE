@@ -17,8 +17,6 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('id');
             $table->text('body');
             $table->boolean('published');
-            $table->unsignedBigInteger('post_id')->nullable();
-            $table->foreign('post_id')->references('id')->on('posts');
             $table->unsignedBigInteger('author_id');
             $table->unsignedBigInteger('reply_id');
             $table->morphs('commentable');
