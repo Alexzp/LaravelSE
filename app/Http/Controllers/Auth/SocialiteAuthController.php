@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\User;
-use App\SocialProfile;
+use App\Models\User;
+use App\Models\SocialProfile;
 use Socialite;
 
 class SocialiteAuthController extends Controller
