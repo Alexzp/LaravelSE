@@ -3,9 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Consern\Commentable;
+use App\Consern\Likeable;
+use App\Consern\Ratingable;
 
 class Post extends Model
 {
+
+    use Commentabe,Likeable,Ratingable;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -36,15 +42,6 @@ class Post extends Model
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];
-
-    /**
-     * Get all of the post's comments.
-     */
-    public function comments()
-    {
-        return $this->morphMany(\App\Models\Comment::class, 'commentable');
-    }
-
 
     /**
      * Get the Walls for the Post.
