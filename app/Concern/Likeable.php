@@ -27,7 +27,7 @@ trait Likeable
     /**
      * Create a like if it does not exist yet.
      */
-    public function like()
+    public function addLike()
     {
         if ($this->likes()->where('author_id', auth()->id())->doesntExist()) {
             return $this->likes()->create(['author_id' => auth()->id()]);
